@@ -283,7 +283,7 @@ const dashboardPreviewJSX = (
                 <div className="flex-1 lg:min-h-0 grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 overflow-visible pt-2 md:pt-4">
                     <ReplayPanel
                         toolHint={
-                            <ToolHint onViewDetails={() => { setEnteredTool(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+                            <ToolHint detailsVariant="link" onViewDetails={() => { setEnteredTool(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
                                 Replay market tick-by-tick data, analyze bid/ask pressure, and visualize order flow intelligence to decipher "big money" moves
                             </ToolHint>
                         }
@@ -297,7 +297,7 @@ const dashboardPreviewJSX = (
 
 // ---------------- Sub Components ----------------
 
-function ReplayPanel({ toolHint }) {
+export function ReplayPanel({ toolHint }) {
     const [symbol, setSymbol] = useState("");
     const [isSearched, setIsSearched] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
